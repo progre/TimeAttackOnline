@@ -28,122 +28,144 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.TextBox titleTextBox;
+            System.Windows.Forms.TextBox passPhraseTextBox;
+            System.Windows.Forms.CheckBox isHostCheckBox;
+            System.Windows.Forms.DateTimePicker dateTimePicker;
+            System.Windows.Forms.GroupBox hostGroupBox;
+            this.openButton = new System.Windows.Forms.Button();
+            this.selectorViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            label3 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            titleTextBox = new System.Windows.Forms.TextBox();
+            passPhraseTextBox = new System.Windows.Forms.TextBox();
+            isHostCheckBox = new System.Windows.Forms.CheckBox();
+            dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            hostGroupBox = new System.Windows.Forms.GroupBox();
+            hostGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectorViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(77, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 19);
-            this.textBox1.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 12);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "大会名:";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(28, 21);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(43, 12);
+            label3.TabIndex = 2;
+            label3.Text = "大会名:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 12);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "pass-phrase:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(80, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 19);
-            this.textBox3.TabIndex = 3;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 16);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "主催";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.CustomFormat = "yyyy年MM月dd日 HH時mm分";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 43);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(251, 19);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.Value = new System.DateTime(2012, 4, 5, 20, 40, 0, 0);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 74);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(3, 6);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(71, 12);
+            label5.TabIndex = 4;
+            label5.Text = "pass-phrase:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 12);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "日付:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(40, 48);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(31, 12);
+            label1.TabIndex = 7;
+            label1.Text = "日付:";
             // 
-            // button1
+            // titleTextBox
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(262, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "開く";
-            this.button1.UseVisualStyleBackColor = true;
+            titleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.selectorViewModelBindingSource, "Title", true));
+            titleTextBox.Location = new System.Drawing.Point(77, 18);
+            titleTextBox.Name = "titleTextBox";
+            titleTextBox.Size = new System.Drawing.Size(251, 19);
+            titleTextBox.TabIndex = 0;
+            // 
+            // passPhraseTextBox
+            // 
+            passPhraseTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            passPhraseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.selectorViewModelBindingSource, "PassPhrase", true));
+            passPhraseTextBox.Location = new System.Drawing.Point(80, 3);
+            passPhraseTextBox.Name = "passPhraseTextBox";
+            passPhraseTextBox.Size = new System.Drawing.Size(257, 19);
+            passPhraseTextBox.TabIndex = 3;
+            // 
+            // isHostCheckBox
+            // 
+            isHostCheckBox.AutoSize = true;
+            isHostCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.selectorViewModelBindingSource, "IsHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            isHostCheckBox.Location = new System.Drawing.Point(11, 27);
+            isHostCheckBox.Name = "isHostCheckBox";
+            isHostCheckBox.Size = new System.Drawing.Size(48, 16);
+            isHostCheckBox.TabIndex = 5;
+            isHostCheckBox.Text = "主催";
+            isHostCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker
+            // 
+            dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dateTimePicker.CustomFormat = "yyyy年MM月dd日 HH時mm分";
+            dateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.selectorViewModelBindingSource, "DateTime", true));
+            dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            dateTimePicker.Location = new System.Drawing.Point(77, 43);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new System.Drawing.Size(251, 19);
+            dateTimePicker.TabIndex = 6;
+            // 
+            // hostGroupBox
+            // 
+            hostGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            hostGroupBox.Controls.Add(label1);
+            hostGroupBox.Controls.Add(label3);
+            hostGroupBox.Controls.Add(dateTimePicker);
+            hostGroupBox.Controls.Add(titleTextBox);
+            hostGroupBox.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.selectorViewModelBindingSource, "IsHost", true));
+            hostGroupBox.Enabled = false;
+            hostGroupBox.Location = new System.Drawing.Point(3, 28);
+            hostGroupBox.Name = "hostGroupBox";
+            hostGroupBox.Size = new System.Drawing.Size(334, 74);
+            hostGroupBox.TabIndex = 7;
+            hostGroupBox.TabStop = false;
+            // 
+            // openButton
+            // 
+            this.openButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.openButton.Location = new System.Drawing.Point(262, 108);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(75, 23);
+            this.openButton.TabIndex = 8;
+            this.openButton.Text = "開く";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
+            // 
+            // selectorViewModelBindingSource
+            // 
+            this.selectorViewModelBindingSource.DataSource = typeof(Progressive.TimeAttackOnline.ViewModels.SelectorViewModel);
             // 
             // SelectorControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.openButton);
+            this.Controls.Add(isHostCheckBox);
+            this.Controls.Add(hostGroupBox);
+            this.Controls.Add(passPhraseTextBox);
+            this.Controls.Add(label5);
             this.Name = "SelectorControl";
             this.Size = new System.Drawing.Size(340, 136);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            hostGroupBox.ResumeLayout(false);
+            hostGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectorViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,14 +173,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource selectorViewModelBindingSource;
+        private System.Windows.Forms.Button openButton;
     }
 }

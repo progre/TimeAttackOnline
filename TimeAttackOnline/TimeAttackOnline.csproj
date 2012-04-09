@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons\ViewModels\ViewModelBase.cs" />
+    <Compile Include="Commons\ViewModels\DelegateCommand.cs" />
+    <Compile Include="Commons\Views\FormUtils.cs" />
+    <Compile Include="ViewModels\MainTimerViewModel.cs" />
+    <Compile Include="ViewModels\SelectorViewModel.cs" />
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,7 @@
     <EmbeddedResource Include="Views\SelectorControl.resx">
       <DependentUpon>SelectorControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Progressive.TimeAttackOnline.ViewModels.SelectorViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,6 +102,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeAttackOnline.Commons\TimeAttackOnline.Commons.csproj">
+      <Project>{B2D0C8B2-68A7-4483-AD6A-E5D631E4B46C}</Project>
+      <Name>TimeAttackOnline.Commons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

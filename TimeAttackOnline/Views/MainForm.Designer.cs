@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainTimerControl = new Progressive.TimeAttackOnline.Views.MainTimerControl();
             this.selectorControl = new Progressive.TimeAttackOnline.Views.SelectorControl();
-            this.mainTimerControl1 = new Progressive.TimeAttackOnline.Views.MainTimerControl();
             this.SuspendLayout();
+            // 
+            // mainTimerControl
+            // 
+            this.mainTimerControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTimerControl.Location = new System.Drawing.Point(0, 0);
+            this.mainTimerControl.Name = "mainTimerControl";
+            this.mainTimerControl.Size = new System.Drawing.Size(337, 135);
+            this.mainTimerControl.TabIndex = 1;
             // 
             // selectorControl
             // 
@@ -40,20 +48,12 @@
             this.selectorControl.Size = new System.Drawing.Size(337, 135);
             this.selectorControl.TabIndex = 0;
             // 
-            // mainTimerControl1
-            // 
-            this.mainTimerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTimerControl1.Location = new System.Drawing.Point(0, 0);
-            this.mainTimerControl1.Name = "mainTimerControl1";
-            this.mainTimerControl1.Size = new System.Drawing.Size(337, 135);
-            this.mainTimerControl1.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 135);
-            this.Controls.Add(this.mainTimerControl1);
+            this.Controls.Add(this.mainTimerControl);
             this.Controls.Add(this.selectorControl);
             this.Name = "MainForm";
             this.Text = "TimeAttackOnline";
@@ -64,7 +64,7 @@
         #endregion
 
         private Progressive.TimeAttackOnline.Views.SelectorControl selectorControl;
-        private Progressive.TimeAttackOnline.Views.MainTimerControl mainTimerControl1;
+        private Progressive.TimeAttackOnline.Views.MainTimerControl mainTimerControl;
 
 
 
