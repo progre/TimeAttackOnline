@@ -5,6 +5,7 @@ using System.Text;
 using System.ComponentModel;
 using Progressive.TimeAttackOnline.Commons.ViewModels;
 using System.Windows.Input;
+using Progressive.TimeAttackOnline.Models;
 
 namespace Progressive.TimeAttackOnline.ViewModels
 {
@@ -38,6 +39,7 @@ namespace Progressive.TimeAttackOnline.ViewModels
             OpenCommand = new DelegateCommand(
                 parameter =>
                 {
+                    new ServerModel();
                     OnSucceeded();
                 },
                 parameter => true);
