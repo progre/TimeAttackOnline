@@ -34,9 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AsyncCtpLibrary">
+      <HintPath>..\..\..\..\Microsoft Visual Studio Async CTP\Samples\AsyncCtpLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,7 +54,10 @@
   <ItemGroup>
     <Compile Include="Commons\ViewModels\ViewModelBase.cs" />
     <Compile Include="Commons\ViewModels\DelegateCommand.cs" />
+    <Compile Include="Commons\ViewModels\ViewModelUtils.cs" />
     <Compile Include="Commons\Views\FormUtils.cs" />
+    <Compile Include="DynamicJson.cs" />
+    <Compile Include="Models\AsyncExtensions.cs" />
     <Compile Include="ViewModels\MainTimerViewModel.cs" />
     <Compile Include="ViewModels\SelectorViewModel.cs" />
     <Compile Include="Views\MainForm.cs">
@@ -92,6 +99,7 @@
     <EmbeddedResource Include="Views\SelectorControl.resx">
       <DependentUpon>SelectorControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\Progressive.TimeAttackOnline.ViewModels.SelectorViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

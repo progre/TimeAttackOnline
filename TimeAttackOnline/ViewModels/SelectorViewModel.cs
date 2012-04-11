@@ -6,15 +6,29 @@ using System.ComponentModel;
 using Progressive.TimeAttackOnline.Commons.ViewModels;
 using System.Windows.Input;
 using Progressive.TimeAttackOnline.Models;
+using System.Threading.Tasks;
+using Codeplex.Data;
 
 namespace Progressive.TimeAttackOnline.ViewModels
 {
     public class SelectorViewModel : ViewModelBase
     {
-        public event Action OnSucceeded;
-        public event Action OnFailed;
+        public event Action<bool?, bool> OnProcessed;
 
-        public string PassPhrase { get; set; }
+        private string passPhrase;
+        public string PassPhrase
+        {
+            get { return passPhrase; }
+            set
+            {
+                if (passPhrase == value)
+                {
+                    return;
+                }
+                passPhrase = value;
+                NotifyPropertyChanged("PassPhrase");
+            }
+        }
         private bool isHost;
         public bool IsHost
         {
@@ -30,19 +44,45 @@ namespace Progressive.TimeAttackOnline.ViewModels
             }
         }
         public string Title { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime StartTime { get; set; }
 
-        public ICommand OpenCommand { get; private set; }
+        private DelegateCommand openCommand;
+        public ICommand OpenCommand { get { return openCommand; } }
 
         public SelectorViewModel()
         {
-            OpenCommand = new DelegateCommand(
+            openCommand = new DelegateCommand(
+                async parameter =>
+                {
+                    var model = new ServerModel();
+                    if (isHost)
+                    {
+                        bool? result = await model.AddEventAsync(PassPhrase, Title, StartTime);
+                        OnProcessed(result, true);
+                    }
+                    else
+                    {
+                        var result = await model.GetEventAsync(PassPhrase);
+                        if (result.Item1 == true)
+                        {
+                            var json = DynamicJson.Parse(result.Item2);
+                            Title = json.title;
+                            StartTime = json["start-time"];
+                        }
+                        OnProcessed(result.Item1, false);
+                    }
+                },
                 parameter =>
                 {
-                    new ServerModel();
-                    OnSucceeded();
-                },
-                parameter => true);
+                    if (string.IsNullOrEmpty(PassPhrase))
+                    {
+                        return false;
+                    }
+                    return true;
+                });
+
+            PropertyChanged += ViewModelUtils.ToPropertyChangedEventHandler(
+                "PassPhrase", openCommand.NotifyCanExecuteChanged);
         }
     }
 }

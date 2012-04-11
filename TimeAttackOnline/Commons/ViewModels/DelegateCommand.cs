@@ -17,6 +17,11 @@ namespace Progressive.TimeAttackOnline.Commons.ViewModels
             this.canExecute = canExecute;
         }
 
+        internal void NotifyCanExecuteChanged()
+        {
+            CanExecuteChanged(this, new EventArgs());
+        }
+
         #region ICommand メンバー
 
         public bool CanExecute(object parameter)

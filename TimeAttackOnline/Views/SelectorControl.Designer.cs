@@ -35,7 +35,7 @@
             System.Windows.Forms.TextBox titleTextBox;
             System.Windows.Forms.TextBox passPhraseTextBox;
             System.Windows.Forms.CheckBox isHostCheckBox;
-            System.Windows.Forms.DateTimePicker dateTimePicker;
+            System.Windows.Forms.DateTimePicker startTimePicker;
             System.Windows.Forms.GroupBox hostGroupBox;
             this.openButton = new System.Windows.Forms.Button();
             this.selectorViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,7 +45,7 @@
             titleTextBox = new System.Windows.Forms.TextBox();
             passPhraseTextBox = new System.Windows.Forms.TextBox();
             isHostCheckBox = new System.Windows.Forms.CheckBox();
-            dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            startTimePicker = new System.Windows.Forms.DateTimePicker();
             hostGroupBox = new System.Windows.Forms.GroupBox();
             hostGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectorViewModelBindingSource)).BeginInit();
@@ -63,11 +63,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(3, 6);
+            label5.Location = new System.Drawing.Point(11, 6);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(71, 12);
+            label5.Size = new System.Drawing.Size(63, 12);
             label5.TabIndex = 4;
-            label5.Text = "pass-phrase:";
+            label5.Text = "パスフレーズ:";
             // 
             // label1
             // 
@@ -92,7 +92,7 @@
             // 
             passPhraseTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            passPhraseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.selectorViewModelBindingSource, "PassPhrase", true));
+            passPhraseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.selectorViewModelBindingSource, "PassPhrase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             passPhraseTextBox.Location = new System.Drawing.Point(80, 3);
             passPhraseTextBox.Name = "passPhraseTextBox";
             passPhraseTextBox.Size = new System.Drawing.Size(257, 19);
@@ -109,17 +109,17 @@
             isHostCheckBox.Text = "主催";
             isHostCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker
+            // startTimePicker
             // 
-            dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            startTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dateTimePicker.CustomFormat = "yyyy年MM月dd日 HH時mm分";
-            dateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.selectorViewModelBindingSource, "DateTime", true));
-            dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dateTimePicker.Location = new System.Drawing.Point(77, 43);
-            dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new System.Drawing.Size(251, 19);
-            dateTimePicker.TabIndex = 6;
+            startTimePicker.CustomFormat = "yyyy年MM月dd日 HH時mm分";
+            startTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.selectorViewModelBindingSource, "StartTime", true));
+            startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            startTimePicker.Location = new System.Drawing.Point(77, 43);
+            startTimePicker.Name = "startTimePicker";
+            startTimePicker.Size = new System.Drawing.Size(251, 19);
+            startTimePicker.TabIndex = 6;
             // 
             // hostGroupBox
             // 
@@ -127,7 +127,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             hostGroupBox.Controls.Add(label1);
             hostGroupBox.Controls.Add(label3);
-            hostGroupBox.Controls.Add(dateTimePicker);
+            hostGroupBox.Controls.Add(startTimePicker);
             hostGroupBox.Controls.Add(titleTextBox);
             hostGroupBox.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.selectorViewModelBindingSource, "IsHost", true));
             hostGroupBox.Enabled = false;
