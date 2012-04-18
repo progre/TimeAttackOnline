@@ -40,7 +40,7 @@ namespace Progressive.TimeAttackOnline.Models
         {
             return BeginGetServerResponse(
                 callback, state, "get", "add",
-                "pass-phrase", passPhrase, "title", title, "start-time", startTime.ToString("yyyy/MM/dd hh:mm:ss"));
+                "pass-phrase", passPhrase, "title", title, "start-date", startTime.ToUniversalTime().ToString("yyyy/MM/dd hh:mm:ss"));
         }
 
         public bool? EndAddEvent(IAsyncResult asyncResult)

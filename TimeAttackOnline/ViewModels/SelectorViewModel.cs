@@ -8,6 +8,7 @@ using System.Windows.Input;
 using Progressive.TimeAttackOnline.Models;
 using System.Threading.Tasks;
 using Codeplex.Data;
+using System.Globalization;
 
 namespace Progressive.TimeAttackOnline.ViewModels
 {
@@ -43,7 +44,20 @@ namespace Progressive.TimeAttackOnline.ViewModels
                 NotifyPropertyChanged("IsHost");
             }
         }
-        public string Title { get; set; }
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                if (title == value)
+                {
+                    return;
+                }
+                title = value;
+                NotifyPropertyChanged("Title");
+            }
+        }
         public DateTime StartTime { get; set; }
 
         private DelegateCommand openCommand;
@@ -51,6 +65,9 @@ namespace Progressive.TimeAttackOnline.ViewModels
 
         public SelectorViewModel()
         {
+            var now = DateTime.Now;
+            StartTime = now.AddMilliseconds(-now.Second * 1000 - now.Millisecond);
+
             openCommand = new DelegateCommand(
                 async parameter =>
                 {
@@ -63,26 +80,42 @@ namespace Progressive.TimeAttackOnline.ViewModels
                     else
                     {
                         var result = await model.GetEventAsync(PassPhrase);
-                        if (result.Item1 == true)
+                        if (result.Item1 == false)
                         {
-                            var json = DynamicJson.Parse(result.Item2);
-                            Title = json.title;
-                            StartTime = json["start-time"];
+                            OnProcessed(false, false);
+                            return;
                         }
-                        OnProcessed(result.Item1, false);
+                        var json = DynamicJson.Parse(result.Item2);
+                        if (json.result != "success")
+                        {
+                            OnProcessed(false, false);
+                            return;
+                        }
+                        Title = json.title;
+                        StartTime = DateTime.Parse(json["start-date"], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal);
+                        OnProcessed(true, false);
                     }
                 },
                 parameter =>
                 {
-                    if (string.IsNullOrEmpty(PassPhrase))
+                    if (string.IsNullOrEmpty(PassPhrase)
+                        || IsHost && string.IsNullOrEmpty(Title))
                     {
                         return false;
                     }
                     return true;
                 });
 
-            PropertyChanged += ViewModelUtils.ToPropertyChangedEventHandler(
-                "PassPhrase", openCommand.NotifyCanExecuteChanged);
+            PropertyChanged += (sender, e) =>
+            {
+                if (e.PropertyName != "PassPhrase"
+                    && e.PropertyName != "IsHost"
+                    && e.PropertyName != "Title")
+                {
+                    return;
+                }
+                openCommand.NotifyCanExecuteChanged();
+            };
         }
     }
 }

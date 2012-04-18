@@ -37,7 +37,7 @@
             this.mainTimerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTimerControl.Location = new System.Drawing.Point(0, 0);
             this.mainTimerControl.Name = "mainTimerControl";
-            this.mainTimerControl.Size = new System.Drawing.Size(337, 135);
+            this.mainTimerControl.Size = new System.Drawing.Size(374, 135);
             this.mainTimerControl.TabIndex = 1;
             // 
             // selectorControl
@@ -45,14 +45,14 @@
             this.selectorControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.selectorControl.Location = new System.Drawing.Point(0, 0);
             this.selectorControl.Name = "selectorControl";
-            this.selectorControl.Size = new System.Drawing.Size(337, 135);
+            this.selectorControl.Size = new System.Drawing.Size(374, 135);
             this.selectorControl.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 135);
+            this.ClientSize = new System.Drawing.Size(374, 135);
             this.Controls.Add(this.mainTimerControl);
             this.Controls.Add(this.selectorControl);
             this.Name = "MainForm";

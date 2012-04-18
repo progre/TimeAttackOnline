@@ -82,7 +82,7 @@
             // 
             titleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.selectorViewModelBindingSource, "Title", true));
+            titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.selectorViewModelBindingSource, "Title", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             titleTextBox.Location = new System.Drawing.Point(77, 18);
             titleTextBox.Name = "titleTextBox";
             titleTextBox.Size = new System.Drawing.Size(251, 19);

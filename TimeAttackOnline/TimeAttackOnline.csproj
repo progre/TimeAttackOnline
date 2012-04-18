@@ -58,6 +58,7 @@
     <Compile Include="Commons\Views\FormUtils.cs" />
     <Compile Include="DynamicJson.cs" />
     <Compile Include="Models\AsyncExtensions.cs" />
+    <Compile Include="Models\HotKey.cs" />
     <Compile Include="ViewModels\MainTimerViewModel.cs" />
     <Compile Include="ViewModels\SelectorViewModel.cs" />
     <Compile Include="Views\MainForm.cs">
@@ -100,6 +101,7 @@
       <DependentUpon>SelectorControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Progressive.TimeAttackOnline.ViewModels.MainTimerViewModel.datasource" />
     <None Include="Properties\DataSources\Progressive.TimeAttackOnline.ViewModels.SelectorViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +112,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TimeAttackOnline.Commons\TimeAttackOnline.Commons.csproj">

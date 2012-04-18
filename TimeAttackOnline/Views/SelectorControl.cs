@@ -13,7 +13,7 @@ namespace Progressive.TimeAttackOnline.Views
 {
     public partial class SelectorControl : UserControl
     {
-        public event Action OnSelected = () => { };
+        public event Action OnProcessed = () => { };
         public SelectorViewModel ViewModel { get; private set; }
 
         public SelectorControl()
@@ -21,16 +21,16 @@ namespace Progressive.TimeAttackOnline.Views
             ViewModel = new SelectorViewModel();
             InitializeComponent();
             selectorViewModelBindingSource.Add(ViewModel);
+            openButton.Enabled = ViewModel.OpenCommand.CanExecute(null);
             ViewModel.OpenCommand.CanExecuteChanged +=
                 (sender, e) => openButton.Enabled = ViewModel.OpenCommand.CanExecute(null);
-            openButton.Enabled = ViewModel.OpenCommand.CanExecute(null);
             ViewModel.OnProcessed += (result, isHost) =>
             {
                 EndProcessing();
                 switch (result)
                 {
                     case true:
-                        OnSelected();
+                        OnProcessed();
                         return;
                     case false:
                         if (isHost)
@@ -48,6 +48,7 @@ namespace Progressive.TimeAttackOnline.Views
                     case null:
                         MessageBox.Show("サーバとの接続に失敗しました。暫く時間を置いてから再試行してください。", "サーバとの接続に失敗",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        OnProcessed();
                         return;
                 }
             };

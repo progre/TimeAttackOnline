@@ -16,8 +16,13 @@ namespace TimeAttackOnline.Views
         {
             InitializeComponent();
             mainTimerControl.Visible = false;
-            selectorControl.OnSelected += () =>
+            selectorControl.OnProcessed += () =>
             {
+                var mt = mainTimerControl.ViewModel;
+                var s = selectorControl.ViewModel;
+                mt.PassPhrase = s.PassPhrase;
+                mt.Title = s.Title;
+                mt.StartTime = s.StartTime;
                 selectorControl.Visible = false;
                 mainTimerControl.Visible = true;
             };
