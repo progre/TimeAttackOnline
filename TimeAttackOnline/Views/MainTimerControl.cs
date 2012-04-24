@@ -13,10 +13,13 @@ namespace Progressive.TimeAttackOnline.Views
 {
     public partial class MainTimerControl : UserControl
     {
+        private SoundPlayer soundPlayer = new SoundPlayer();
+        private int currentCountDownSecond;
         public MainTimerViewModel ViewModel { get; private set; }
 
         public MainTimerControl()
         {
+            currentCountDownSecond = int.MinValue;
             ViewModel = new MainTimerViewModel()
             {
                 AskResume = () =>
@@ -35,6 +38,22 @@ namespace Progressive.TimeAttackOnline.Views
             timer.Tick += (sender, e) =>
             {
                 displayLabel.DataBindings["Text"].ReadValue();
+                if (ViewModel.Mode == Mode.Running)
+                {
+                    int totalSeconds = (int)ViewModel.Count.TotalSeconds;
+                    if (currentCountDownSecond != totalSeconds)
+                    {
+                        currentCountDownSecond = totalSeconds;
+                        if (currentCountDownSecond == 0)
+                        {
+                            soundPlayer.Play(0);
+                        }
+                        else
+                        {
+                            soundPlayer.Play(-currentCountDownSecond + 1);
+                        }
+                    }
+                }
             };
             timer.Interval = 16;
             timer.Start();

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Progressive.TimeAttackOnline.ViewModels;
 
-namespace TimeAttackOnline.Views
+namespace Progressive.TimeAttackOnline.Views
 {
     public partial class MainForm : Form
     {

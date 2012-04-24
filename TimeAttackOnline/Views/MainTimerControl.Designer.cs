@@ -31,15 +31,45 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TextBox textBox1;
             System.Windows.Forms.Label label1;
+            this.mainTimerViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.displayLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.startStopButton = new System.Windows.Forms.Button();
-            this.mainTimerViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             textBox1 = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTimerViewModelBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainTimerViewModelBindingSource, "PassPhrase", true));
+            textBox1.Location = new System.Drawing.Point(0, 3);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new System.Drawing.Size(217, 19);
+            textBox1.TabIndex = 2;
+            textBox1.Text = "rockman2ta";
+            // 
+            // mainTimerViewModelBindingSource
+            // 
+            this.mainTimerViewModelBindingSource.DataSource = typeof(Progressive.TimeAttackOnline.ViewModels.MainTimerViewModel);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainTimerViewModelBindingSource, "Title", true));
+            label1.Dock = System.Windows.Forms.DockStyle.Top;
+            label1.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            label1.Location = new System.Drawing.Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(289, 21);
+            label1.TabIndex = 8;
+            label1.Text = "ロックマン2TA 2012/4/3 23:50～";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // displayLabel
             // 
@@ -63,19 +93,6 @@
             this.panel1.Size = new System.Drawing.Size(370, 23);
             this.panel1.TabIndex = 9;
             // 
-            // textBox1
-            // 
-            textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainTimerViewModelBindingSource, "PassPhrase", true));
-            textBox1.Location = new System.Drawing.Point(0, 3);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new System.Drawing.Size(217, 19);
-            textBox1.TabIndex = 2;
-            textBox1.Text = "rockman2ta";
-            // 
             // startStopButton
             // 
             this.startStopButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -91,23 +108,6 @@
             this.startStopButton.UseWaitCursor = true;
             this.startStopButton.Click += new System.EventHandler(this.StartStopButton_Click);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainTimerViewModelBindingSource, "Title", true));
-            label1.Dock = System.Windows.Forms.DockStyle.Top;
-            label1.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            label1.Location = new System.Drawing.Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(289, 21);
-            label1.TabIndex = 8;
-            label1.Text = "ロックマン2TA 2012/4/3 23:50～";
-            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // mainTimerViewModelBindingSource
-            // 
-            this.mainTimerViewModelBindingSource.DataSource = typeof(Progressive.TimeAttackOnline.ViewModels.MainTimerViewModel);
-            // 
             // MainTimerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -117,9 +117,9 @@
             this.Controls.Add(label1);
             this.Name = "MainTimerControl";
             this.Size = new System.Drawing.Size(370, 137);
+            ((System.ComponentModel.ISupportInitialize)(this.mainTimerViewModelBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainTimerViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

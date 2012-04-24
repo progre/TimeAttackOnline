@@ -1,4 +1,4 @@
-﻿namespace TimeAttackOnline.Views
+﻿namespace Progressive.TimeAttackOnline.Views
 {
     partial class MainForm
     {
